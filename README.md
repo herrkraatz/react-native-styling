@@ -26,7 +26,7 @@ Thoughts:
     4. [Styling with Units & Relative Units](#chapter2d)
     5. [Platform specific Styling with `Platform` Component](#chapter2e)
     6. [Responsive Styling with `Dimensions` Component](#chapter2f)
-    7. [Dynamic Styling with `Dimensions` Component's Event Listener `change`](#chapter2g)
+    7. [Dynamic Responsive Styling with `Dimensions` Component's Event Listener `change`](#chapter2g)
 3. [Links](#chapter3)
 
 
@@ -49,7 +49,13 @@ You can only add styles to these 4 components (or components that are composed f
 
 Example styling:
 
-1. First create a styles object
+1. First let's import StyleSheet component:
+
+```
+import { StyleSheet } from "react-native";
+```
+
+2. Then create a styles object
 
     ```
     const styles = StyleSheet.create({
@@ -60,7 +66,7 @@ Example styling:
     });
     ```
 
-2. Then attach it to style property of your component:
+3. Finally attach it to style property of your component:
 
     ```
     <View style={styles.container}>
@@ -181,7 +187,13 @@ const styles = StyleSheet.create({
 
 ## <a id="chapter2e"></a>v. Platform specific Styling with `Platform` Component
 
-Android:
+First let's import it:
+
+```
+import { Platform } from "react-native";
+```
+
+Check if user has an Android device ...
 
 ```
 if (Platform.OS === "android") {
@@ -191,7 +203,7 @@ if (Platform.OS === "android") {
 }
 ```
 
-iOS:
+or an iOS device:
 
 ```
 if (Platform.OS === "ios") {
@@ -203,9 +215,15 @@ if (Platform.OS === "ios") {
 
 ## <a id="chapter2f"></a>vi. Responsive Styling with `Dimensions` Component
 
-In order to, say, change a responsive container's Flexbox's main direction 
+1. First let's import Dimensions component:
+
+```
+import { Dimensions } from "react-native";
+```
+
+2. Then, in order to, say, change a responsive container's Flexbox's main direction 
 from vertical `flexDirection:: "column"` to horizontal `flexDirection:: "row"` 
-when user rotates his/her device from portrait to landscape:
+when user rotates his/her device from portrait to landscape, do this:
 
 ```
 const styles = StyleSheet.create({
@@ -220,7 +238,7 @@ const styles = StyleSheet.create({
 ```
 
 
-## <a id="chapter2g"></a>vii. Dynamic Styling with `Dimensions` Component's Event Listener `change`
+## <a id="chapter2g"></a>vii. Dynamic Responsive Styling with `Dimensions` Component's Event Listener `change`
 
 The key is to use `Dimensions.addEventListener("change", dims => {})` function to listen to dimension changes (rotation of the device).
 
