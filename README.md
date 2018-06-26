@@ -51,9 +51,9 @@ Example styling:
 
 1. First let's import StyleSheet component:
 
-```
-import { StyleSheet } from "react-native";
-```
+    ```
+    import { StyleSheet } from "react-native";
+    ```
 
 2. Then create a styles object
 
@@ -187,56 +187,55 @@ const styles = StyleSheet.create({
 
 ## <a id="chapter2e"></a>v. Platform specific Styling with `Platform` Component
 
-First let's import it:
+1. First let's import it:
 
-```
-import { Platform } from "react-native";
-```
+    ```
+    import { Platform } from "react-native";
+    ```
 
-Check if user has an Android device ...
+2. Now check if user has an Android device ...
 
-```
-if (Platform.OS === "android") {
+    ```
+    if (Platform.OS === "android") {
+    
+        // do styling for Android
+    
+    }
+    ```
 
-    // do styling for Android
-
-}
-```
-
-or an iOS device:
-
-```
-if (Platform.OS === "ios") {
-
-    // do styling for iOS
-
-}
-```
+    or an iOS device:
+    
+    ```
+    if (Platform.OS === "ios") {
+    
+        // do styling for iOS
+    
+    }
+    ```
 
 ## <a id="chapter2f"></a>vi. Responsive Styling with `Dimensions` Component
 
 1. First let's import Dimensions component:
 
-```
-import { Dimensions } from "react-native";
-```
+    ```
+    import { Dimensions } from "react-native";
+    ```
 
 2. Then, in order to, say, change a responsive container's Flexbox's main direction 
 from vertical `flexDirection:: "column"` to horizontal `flexDirection:: "row"` 
 when user rotates his/her device from portrait to landscape, do this:
 
-```
-const styles = StyleSheet.create({
-    responsiveContainer: {
-        flex: 1,
-        flexDirection: Dimensions.get("window").height > 500 ? "column" : "row"
-    },
-    input: {
-        width: "75%"
-    }
-});
-```
-
+    ```
+    const styles = StyleSheet.create({
+        responsiveContainer: {
+            flex: 1,
+            flexDirection: Dimensions.get("window").height > 500 ? "column" : "row"
+        },
+        input: {
+            width: "75%"
+        }
+    });
+    ```
 
 ## <a id="chapter2g"></a>vii. Dynamic Responsive Styling with `Dimensions` Component's Event Listener `change`
 
