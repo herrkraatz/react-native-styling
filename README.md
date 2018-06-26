@@ -1,7 +1,7 @@
 # React Native Styling
 
-This tutorial shall mostly take away the fear of styling a React Native App. React Native will just translate your 
-JavaScript camelCase style properties into platform specific styles (iOS and Android).
+This tutorial shall mostly take away the fear of styling a React Native App. React Native will translate the JavaScript 
+camelCase style properties of your components into platform specific native styles/layouts (iOS and Android).
 
 Thoughts:
 
@@ -14,7 +14,7 @@ Thoughts:
 
 - This is NOT an in-depth tutorial, just an overview.
 - We do NOT talk about Global Styling (with Custom Components), Animations, and Image Handling.
-- BUT it should give a good overview of the main topics of React Native Styling :-)
+- BUT it should give a good first overview of the main topics of React Native Styling :-)
 
 ## Table of Contents
 
@@ -60,7 +60,7 @@ Example styling:
     });
     ```
 
-2. Then attach it to style property on component:
+2. Then attach it to style property of your component:
 
     ```
     <View style={styles.container}>
@@ -127,12 +127,10 @@ on the screen. E.g. if you have 2 sibling containers with `flex: 1`, both contai
 
 - `justifyContent: "center"`: `justifyContent` means, by default, vertical positioning, i.e. positioning in main direction, 
 which is column by default: `flexDirection: "column"`, so from top to bottom = vertically.
-
 So `justifyContent: "center"` tells React Native to center the elements in the container vertically.
 
 - `alignItems: "center"`: `alignItems` means, by default, horizontal positioning, i.e. positioning on cross-axis 
 to main direction above (cross-axis means 90 degrees from the axis (main direction) of justifyContent above).
-
 So `alignItems: "center"` tells React Native to center the elements in the container horizontally.
 
 For more information:
@@ -183,7 +181,7 @@ const styles = StyleSheet.create({
 
 ## <a id="chapter2e"></a>v. Platform specific Styling with `Platform` Component
 
-The easiest:
+Android:
 
 ```
 if (Platform.OS === "android") {
@@ -193,7 +191,7 @@ if (Platform.OS === "android") {
 }
 ```
 
-And:
+iOS:
 
 ```
 if (Platform.OS === "ios") {
