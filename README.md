@@ -1,13 +1,13 @@
 # React Native Styling
 
-This tutorial shall mostly take away the fear of styling a React Native App. React Native will translate your 
+This tutorial shall mostly take away the fear of styling a React Native App. React Native will just translate your 
 JavaScript camelCase style properties into platform specific styles (iOS and Android).
 
 Thoughts:
 
 - You will mostly use Flexbox (`flex`) to do the layout
-- To do platform specific Styling, use `Platform` Component
-- To do Responsive Styling, use `Dimensions` Component
+- Use `Platform` Component to do platform specific Styling
+- Use `Dimensions` Component to do Responsive Styling
 - Also think of using/buying an Out-of-the-Box Template like React Native Sketch Elements: https://react-native.shop/elements
 
 *Notes:*
@@ -19,7 +19,7 @@ Thoughts:
 ## Table of Contents
 
 1. [Getting Started](#chapter1)
-2. [Styling Patterns](#chapter2)
+2. [Styling Basics](#chapter2)
     1. [Which components can be styled?](#chapter2a)
     2. [StyleSheet.create() vs. {}](#chapter2b)
     3. [Layout with Flexbox `flex`](#chapter2c)
@@ -34,26 +34,9 @@ Thoughts:
 
 *Notes:*
 
-- No Mac needed.
+- This is just a README.md to show code examples for your own React Native Styling Project.
 
-### My Setup
-
-This tutorial was created using
-
-- Mac OS X version High Sierra, 10.13.4 (`sw_vers`) 
-- Node.js version v9.11.1 (`node -v`)
-  
-### Node.js installed ?
-
-If you haven't Node.js installed on your machine, please install current (latest), OR LTS version of Node.js ([By download](https://nodejs.org/en/download/), [By package manager](https://nodejs.org/en/download/package-manager/)).
-
-*Note: LTS version is more stable and must be sufficient for this tutorial.*
-
-This will install Node.js (JavaScript engine) on your machine, and allows JavaScript code to execute not only in your browser.
-Node.js also ships with npm package manager we will need below.
-
-
-## <a id="chapter2"></a>2. Let's dive into Styling Patterns
+## <a id="chapter2"></a>2. Let's dive into the Basics
 
 ## <a id="chapter2a"></a>i. Which components can be styled?
 
@@ -143,11 +126,13 @@ More detailed:
 on the screen. E.g. if you have 2 sibling containers with `flex: 1`, both containers get 50% of the available space.
 
 - `justifyContent: "center"`: `justifyContent` means, by default, vertical positioning, i.e. positioning in main direction, 
-which is column by default: `flexDirection: "column"`, so from top to bottom = vertically. 
+which is column by default: `flexDirection: "column"`, so from top to bottom = vertically.
+
 So `justifyContent: "center"` tells React Native to center the elements in the container vertically.
 
 - `alignItems: "center"`: `alignItems` means, by default, horizontal positioning, i.e. positioning on cross-axis 
 to main direction above (cross-axis means 90 degrees from the axis (main direction) of justifyContent above).
+
 So `alignItems: "center"` tells React Native to center the elements in the container horizontally.
 
 For more information:
