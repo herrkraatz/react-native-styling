@@ -1,12 +1,12 @@
 # React Native Styling
 
-This tutorial shall mostly take away the fear of styling a React Native App. React Native will translate the JavaScript 
+This tutorial shall mostly take away the fear of styling a React Native App. React Native just translates the JavaScript 
 camelCase style properties of your components into platform specific native styles/layouts (iOS and Android).
 
 Thoughts:
 
 - You will mostly use Flexbox (`flex`) to do the layout
-- Use `Platform` Component to do platform specific Styling
+- Use `Platform` Component to do Platform specific Styling
 - Use `Dimensions` Component to do Responsive Styling
 - Also think of using/buying an Out-of-the-Box Template like React Native Sketch Elements: https://react-native.shop/elements
 
@@ -169,7 +169,7 @@ Attach it easily:
 </View>
 ```
 
-To be more flexible if you want to re-use the component in other parts of the app, you might want to give it a Relative Unit (e.g. width = 75%):
+To be more flexible if you want to re-use the component in other parts of the app, you might want to give it a Relative Unit (e.g. width = 80%):
 
 ```
 const styles = StyleSheet.create({
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     input: {
-        width: "75%"
+        width: "80%"
     }
 });
 ```
@@ -232,49 +232,93 @@ when user rotates his/her device from portrait to landscape, do this:
             flexDirection: Dimensions.get("window").height > 500 ? "column" : "row"
         },
         input: {
-            width: "75%"
+            width: "80%"
         }
     });
     ```
 
 ## <a id="chapter2g"></a>vii. Dynamic Responsive Styling with `Dimensions` Component's Event Listener `change`
 
+Our example: We have a simple OurResponsiveLoginScreen component that just shows two TextInput components. 
+
+- In portrait orientation the two TextInputs should be below each other, each having a relative width of 80% (leaving 10% room to the left and 10% to the right)
+- In landscape orientation they are next to each other having a relative width of 35% (together 70%, leaving 10% room for an inbetween space and 10% to the left and 10% to the right)
+
 The key is to use `Dimensions.addEventListener("change", dims => {})` function to listen to dimension changes (rotation of the device).
 
 It is placed inside the constructor of the component. When the rotation event occurs, the `this.setState()` is called 
-causing a re-rendering of the component with the adjusted style properties for the current device's orientation:
+causing a re-rendering of the component with the adjusted style properties for the current device's orientation.
 
+Here is the example code:
 
 ```
-class OurResponsiveComponent extends Component {
-  state = {
-    respStyles: {
-      pwContainerDirection: "column",
-      pwContainerJustifyContent: "flex-start",
-      pwWrapperWidth: "100%"
-    }
-  };
+import React, { Component } from "react";
+import {
+    View,
+    TextInput,
+    StyleSheet,
+    Dimensions
+} from "react-native";
 
-  constructor(props) {
-    super(props);
-    Dimensions.addEventListener("change", dims => {
-      this.setState({
-        respStyles: {
-          pwContainerDirection:
-            Dimensions.get("window").height > 500 ? "column" : "row",
-          pwContainerJustifyContent:
-            Dimensions.get("window").height > 500
-              ? "flex-start"
-              : "space-between",
-          pwWrapperWidth: Dimensions.get("window").height > 500 ? "100%" : "45%"
-        }
-      });
-    });
-  }
-  
-  render() {
-      return (
-      ...
+class OurResponsiveLoginScreen extends Component {
+
+    state = {
+        viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape"
+    };
+
+    constructor(props) {
+        super(props);
+        Dimensions.addEventListener("change", dims => {
+            this.setState({
+                viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape"
+            });
+        });
+    }
+
+    render() {
+
+        return (
+            <View style={styles.container}>
+                <TextInput
+                    placeholder"Your Username"
+                    style={
+                        this.state.viewMode === "portrait"
+                            ? styles.inputPortrait
+                            : styles.inputLandscape
+                    }
+                />
+                <TextInput
+                    placeholder"Your Password"
+                    style={
+                        this.state.viewMode === "portrait"
+                            ? styles.inputPortrait
+                            : styles.inputLandscape
+                    }
+                />
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    inputPortrait: {
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        width: "80%"
+    },
+    inputLandscape: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: "35%"
+    }
+});
+
+export default OurResponsiveLoginScreen;
 ```
 
 ## <a id="chapter3"></a>3. Links
