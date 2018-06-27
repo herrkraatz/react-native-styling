@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     ```
 
 2. Then, in order to, say, change a responsive container's Flexbox's main direction 
-from vertical `flexDirection:: "column"` to horizontal `flexDirection:: "row"` 
+from vertical `flexDirection: "column"` to horizontal `flexDirection: "row"` 
 when user rotates his/her device from portrait to landscape, do this:
 
     ```
@@ -308,12 +308,12 @@ const styles = StyleSheet.create({
     },
     inputPortrait: {
         flexDirection: "column",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         width: "80%"
     },
     inputLandscape: {
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
         width: "35%"
     }
 });
@@ -329,6 +329,10 @@ React Native Styling:
 
 - Maximilian Schwarzmüller, Udemy Course: "React Native - The Practical Guide": https://www.udemy.com/react-native-the-practical-guide/
 - Cheat Sheet: https://github.com/vhpoet/react-native-styling-cheat-sheet
+
+Flex Styling:
+
+- https://css-tricks.com/almanac/properties/j/justify-content/
 
 ### Credits to the authors of above links ! Thank you very much !
 
