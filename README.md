@@ -328,11 +328,14 @@ export default OurResponsiveLoginScreen;
 React Native Styling:
 
 - Maximilian Schwarzmüller, Udemy Course: "React Native - The Practical Guide": https://www.udemy.com/react-native-the-practical-guide/
+- Stephen Grider, Udemy Course "The Complete React Native and Redux Course": https://www.udemy.com/the-complete-react-native-and-redux-course/
 - Cheat Sheet: https://github.com/vhpoet/react-native-styling-cheat-sheet
 
 Flex Styling:
 
 - https://css-tricks.com/almanac/properties/j/justify-content/
+- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- https://www.w3schools.com/css/css3_flexbox.asp
 
 ### Credits to the authors of above links ! Thank you very much !
 
