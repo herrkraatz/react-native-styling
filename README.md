@@ -1,3 +1,6 @@
+# Sorry !! Gosh ... 4 years went by.
+I hope to find time soon to update this tutorial.
+
 # React Native Styling
 
 This tutorial shall mostly take away the fear of styling a React Native App. React Native just translates the JavaScript 
