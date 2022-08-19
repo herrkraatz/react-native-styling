@@ -339,6 +339,7 @@ Flex Styling:
 - https://css-tricks.com/almanac/properties/j/justify-content/
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - https://www.w3schools.com/css/css3_flexbox.asp
+- https://www.scaler.com/topics/css/css-grid-vs-flexbox/
 
 ### Credits to the authors of above links ! Thank you very much !
 
